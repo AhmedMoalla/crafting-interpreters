@@ -1,10 +1,10 @@
-package com.moalla.lox;
+package com.amoalla.lox;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static com.moalla.lox.TokenType.*;
+import static com.amoalla.lox.TokenType.*;
 import static java.util.Map.entry;
 
 public class Scanner {

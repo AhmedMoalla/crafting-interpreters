@@ -1,5 +1,6 @@
-import com.moalla.lox.ErrorReporter;
-import com.moalla.lox.Token;
+import com.amoalla.lox.Scanner;
+import com.amoalla.lox.ErrorReporter;
+import com.amoalla.lox.Token;
 
 int USAGE_EXIT_CODE = 64;
 int INCORRECT_INPUT_EXIT_CODE = 65;
@@ -37,7 +38,7 @@ void runPrompt() throws IOException {
 }
 
 void run(String source) {
-    com.moalla.lox.Scanner scanner = new com.moalla.lox.Scanner(source, errorReporter);
+    Scanner scanner = new Scanner(source, errorReporter);
     List<Token> tokens = scanner.scanTokens();
 
     // For now, just print the tokens.

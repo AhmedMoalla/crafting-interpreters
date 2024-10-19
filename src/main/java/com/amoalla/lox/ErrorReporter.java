@@ -1,4 +1,4 @@
-package com.moalla.lox;
+package com.amoalla.lox;
 
 public class ErrorReporter {
     public boolean hadError = false;

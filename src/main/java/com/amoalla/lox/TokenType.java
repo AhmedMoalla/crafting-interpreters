@@ -1,4 +1,4 @@
-package com.moalla.lox;
+package com.amoalla.lox;
 
 enum TokenType {
   // Single-character tokens.
