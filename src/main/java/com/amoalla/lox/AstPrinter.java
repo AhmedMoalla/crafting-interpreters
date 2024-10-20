@@ -1,7 +1,7 @@
 package com.amoalla.lox;
 
-class AstPrinter implements Expr.Visitor<String> {
-    String print(Expr expr) {
+public class AstPrinter implements Expr.Visitor<String> {
+    public String print(Expr expr) {
         return expr.accept(this);
     }
 
@@ -40,6 +40,7 @@ class AstPrinter implements Expr.Visitor<String> {
         return builder.toString();
     }
 
+    // Expect: (* (- 123) (group 45.67))
     public static void main(String[] args) {
         Expr expression = new Expr.Binary(
                 new Expr.Unary(

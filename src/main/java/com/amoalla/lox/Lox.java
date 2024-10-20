@@ -1,6 +1,5 @@
+import com.amoalla.lox.*;
 import com.amoalla.lox.Scanner;
-import com.amoalla.lox.ErrorReporter;
-import com.amoalla.lox.Token;
 
 int USAGE_EXIT_CODE = 64;
 int INCORRECT_INPUT_EXIT_CODE = 65;
@@ -41,8 +40,11 @@ void run(String source) {
     Scanner scanner = new Scanner(source, errorReporter);
     List<Token> tokens = scanner.scanTokens();
 
-    // For now, just print the tokens.
-    for (Token token : tokens) {
-        System.out.println(token);
-    }
+    Parser parser = new Parser(tokens, errorReporter);
+    Expr expression = parser.parse();
+
+    // Stop if there was a syntax error.
+    if (errorReporter.hadError) return;
+
+    System.out.println(new AstPrinter().print(expression));
 }
